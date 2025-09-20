@@ -1,0 +1,233 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Encrypted FX Trading Terminal Design System */
+
+@layer base {
+  :root {
+    /* Terminal Dark Theme */
+    --background: 220 13% 7%;
+    --foreground: 210 40% 95%;
+
+    /* Trading Cards */
+    --card: 220 13% 9%;
+    --card-foreground: 210 40% 95%;
+
+    /* Popover */
+    --popover: 220 13% 9%;
+    --popover-foreground: 210 40% 95%;
+
+    /* Trading Green (Bull Market) */
+    --primary: 120 100% 45%;
+    --primary-foreground: 220 13% 7%;
+
+    /* Terminal Secondary */
+    --secondary: 220 13% 15%;
+    --secondary-foreground: 210 40% 95%;
+
+    /* Muted Terminal */
+    --muted: 220 13% 12%;
+    --muted-foreground: 215 15% 65%;
+
+    /* Encryption Blue */
+    --accent: 200 100% 60%;
+    --accent-foreground: 220 13% 7%;
+
+    /* Trading Red (Bear Market) */
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 210 40% 95%;
+
+    /* Terminal Borders */
+    --border: 220 13% 20%;
+    --input: 220 13% 15%;
+    --ring: 120 100% 45%;
+
+    /* Custom Trading Colors */
+    --trading-green: 120 100% 45%;
+    --trading-red: 0 85% 60%;
+    --encryption-blue: 200 100% 60%;
+    --terminal-amber: 45 100% 60%;
+    --cyber-purple: 270 80% 70%;
+
+    /* Gradients */
+    --gradient-terminal: linear-gradient(135deg, hsl(220 13% 7%) 0%, hsl(220 13% 12%) 100%);
+    --gradient-encryption: linear-gradient(135deg, hsl(200 100% 60%) 0%, hsl(270 80% 70%) 100%);
+    --gradient-trading: linear-gradient(135deg, hsl(120 100% 45%) 0%, hsl(45 100% 60%) 100%);
+
+    /* Glows and Effects */
+    --glow-green: 0 0 20px hsl(120 100% 45% / 0.3);
+    --glow-blue: 0 0 20px hsl(200 100% 60% / 0.3);
+    --glow-purple: 0 0 20px hsl(270 80% 70% / 0.3);
+    
+    /* Shadows */
+    --shadow-terminal: 0 4px 20px hsl(220 13% 7% / 0.8);
+    --shadow-card: 0 2px 10px hsl(220 13% 7% / 0.5);
+
+    --radius: 0.375rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  /* Terminal Glow Effects */
+  .glow-green {
+    box-shadow: var(--glow-green);
+  }
+  
+  .glow-blue {
+    box-shadow: var(--glow-blue);
+  }
+  
+  .glow-purple {
+    box-shadow: var(--glow-purple);
+  }
+
+  /* Trading Terminal Animations */
+  .pulse-trading {
+    animation: pulse-trading 2s ease-in-out infinite;
+  }
+
+  .encrypt-flicker {
+    animation: encrypt-flicker 1.5s linear infinite;
+  }
+
+  .currency-glow {
+    animation: currency-glow 3s ease-in-out infinite alternate;
+  }
+
+  .digital-spark {
+    animation: digital-spark 2s linear infinite;
+  }
+
+  /* Terminal Card Styles */
+  .terminal-card {
+    @apply bg-card border border-border rounded-lg;
+    background: var(--gradient-terminal);
+    box-shadow: var(--shadow-card);
+  }
+
+  .trading-button {
+    @apply bg-primary text-primary-foreground hover:opacity-90 transition-all duration-200;
+    box-shadow: var(--glow-green);
+  }
+
+  .encryption-button {
+    @apply bg-accent text-accent-foreground hover:opacity-90 transition-all duration-200;
+    box-shadow: var(--glow-blue);
+  }
+}
+
+@layer utilities {
+  /* Custom Keyframes */
+  @keyframes pulse-trading {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  @keyframes encrypt-flicker {
+    0%, 100% { opacity: 1; }
+    25% { opacity: 0.8; }
+    50% { opacity: 0.9; }
+    75% { opacity: 0.7; }
+  }
+
+  @keyframes currency-glow {
+    0% { 
+      box-shadow: 0 0 5px hsl(var(--trading-green) / 0.3);
+    }
+    100% { 
+      box-shadow: 0 0 20px hsl(var(--trading-green) / 0.6), 0 0 30px hsl(var(--trading-green) / 0.3);
+    }
+  }
+
+  @keyframes digital-spark {
+    0% { transform: translateX(-100%); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateX(200%); opacity: 0; }
+  }
+
+  /* Gradient Text */
+  .text-gradient-trading {
+    background: var(--gradient-trading);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-encryption {
+    background: var(--gradient-encryption);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
