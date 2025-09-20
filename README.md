@@ -1,65 +1,75 @@
-# FHE Swap Desk
+# 🔐 FHE Swap Desk
 
-A fully homomorphic encryption (FHE) powered foreign exchange swap desk that enables private FX trading with complete data protection.
+> **Private Foreign Exchange Trading with Homomorphic Encryption**
 
-## Features
+A revolutionary decentralized exchange platform that leverages Fully Homomorphic Encryption (FHE) to enable completely private foreign exchange trading while protecting against MEV attacks and front-running.
 
-- **FHE Encryption**: All trading data is encrypted using Fully Homomorphic Encryption
-- **MEV Protection**: Prevents front-running and MEV attacks through encrypted order execution
-- **Multi-Currency Support**: Trade between major currencies (EUR, USD, GBP, JPY, etc.)
-- **Wallet Integration**: Connect with RainbowKit and other popular wallets
-- **Real-time Analytics**: Monitor market conditions and trading performance
-- **Private Transactions**: Execute swaps without revealing trading intentions
+## ✨ Key Features
 
-## Technology Stack
+- 🔒 **Zero-Knowledge Trading**: All sensitive data encrypted until execution
+- ⚡ **MEV Protection**: Advanced encryption prevents sandwich attacks
+- 🌍 **Global Currency Support**: Trade 8+ major currencies privately
+- 💼 **Multi-Wallet Support**: Seamless integration with popular wallets
+- 📊 **Real-time Analytics**: Live market data with privacy preservation
+- 🛡️ **Anti-Frontrunning**: Encrypted order execution prevents manipulation
 
-- **Frontend**: React, TypeScript, Vite, Tailwind CSS
-- **Wallet**: RainbowKit, Wagmi, Viem
-- **Blockchain**: Ethereum (Sepolia testnet)
-- **Encryption**: FHE (Fully Homomorphic Encryption)
-- **Smart Contracts**: Solidity with FHE support
+## 🛠️ Technology Stack
 
-## Getting Started
+| Category | Technology |
+|----------|------------|
+| 🎨 **Frontend** | React 18, TypeScript, Vite, Tailwind CSS |
+| 💳 **Wallet** | RainbowKit, Wagmi, Viem |
+| ⛓️ **Blockchain** | Ethereum (Sepolia Testnet) |
+| 🔐 **Encryption** | FHE (Fully Homomorphic Encryption) |
+| 📜 **Smart Contracts** | Solidity with FHE Libraries |
 
-### Prerequisites
+## 🚀 Quick Start
 
-- Node.js 18+ and npm
-- Git
-- MetaMask or compatible wallet
+### 📋 Prerequisites
 
-### Installation
+- [Node.js](https://nodejs.org/) 18+ and npm
+- [Git](https://git-scm.com/) version control
+- [MetaMask](https://metamask.io/) or compatible Web3 wallet
+- [Sepolia ETH](https://sepoliafaucet.com/) for testing
+
+### ⚙️ Installation
 
 ```bash
-# Clone the repository
+# 1️⃣ Clone the repository
 git clone https://github.com/LydiaPham/fhe-swap-desk.git
 cd fhe-swap-desk
 
-# Install dependencies
+# 2️⃣ Install dependencies
 npm install
 
-# Set up environment variables
+# 3️⃣ Configure environment
 cp .env.example .env
-# Edit .env with your configuration
+# Edit .env with your API keys
 
-# Start development server
+# 4️⃣ Start development server
 npm run dev
 ```
 
-### Environment Configuration
+> 💡 **Tip**: Make sure to add Sepolia network to your wallet for testing!
 
-Create a `.env` file with the following variables:
+### 🔧 Environment Configuration
+
+Create a `.env` file with your own API keys:
 
 ```env
 # Chain Configuration
-NEXT_PUBLIC_CHAIN_ID=11155111
-NEXT_PUBLIC_RPC_URL=https://sepolia.infura.io/v3/YOUR_INFURA_KEY
+VITE_CHAIN_ID=11155111
+VITE_RPC_URL=https://sepolia.infura.io/v3/YOUR_INFURA_KEY
 
-# Wallet Connect Configuration
-NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID=YOUR_PROJECT_ID
+# Wallet Connect Configuration  
+VITE_WALLET_CONNECT_PROJECT_ID=YOUR_PROJECT_ID
 
 # Infura Configuration
-NEXT_PUBLIC_INFURA_API_KEY=YOUR_INFURA_KEY
+VITE_INFURA_API_KEY=YOUR_INFURA_KEY
+VITE_RPC_URL_ALT=https://1rpc.io/sepolia
 ```
+
+> ⚠️ **Security**: Never commit your `.env` file with real API keys!
 
 ## Smart Contract Deployment
 

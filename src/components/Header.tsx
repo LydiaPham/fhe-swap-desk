@@ -4,7 +4,15 @@ import { Link } from "react-router-dom";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useAccount, useBalance } from 'wagmi';
 import { formatEther } from 'viem';
-import encryptedFxLogo from "@/assets/encrypted-fx-logo.svg";
+// Using inline SVG for logo
+const LogoIcon = () => (
+  <svg width="40" height="40" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="32" height="32" rx="8" fill="#1a1a1a"/>
+    <path d="M8 12h16v2H8v-2zm0 4h16v2H8v-2zm0 4h12v2H8v-2z" fill="#00ff88"/>
+    <circle cx="24" cy="8" r="3" fill="#00ff88" opacity="0.8"/>
+    <path d="M22 8h4M24 6v4" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+);
 
 const Header = () => {
   const { address, isConnected } = useAccount();
@@ -18,17 +26,13 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo and Title */}
           <div className="flex items-center space-x-4">
-            <img 
-              src={encryptedFxLogo} 
-              alt="Encrypted FX Logo" 
-              className="h-10 w-10 glow-blue"
-            />
+            <LogoIcon />
             <div>
-              <h1 className="text-2xl font-bold text-gradient-encryption">
-                Encrypted FX
+              <h1 className="text-2xl font-bold text-gradient-trading">
+                FHE Swap Desk
               </h1>
               <p className="text-sm text-muted-foreground font-mono">
-                Confidential FX with FHE
+                Private FX Trading
               </p>
             </div>
           </div>
